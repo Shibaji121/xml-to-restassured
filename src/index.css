@@ -130,6 +130,7 @@ label {
   background: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);
   color: white;
   font-family: sans-serif;
+  font-size: x-large;
   transition: all 0.5s;
   box-shadow: 1px 1px 15px 1px gray;
 }
