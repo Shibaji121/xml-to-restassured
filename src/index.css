@@ -110,7 +110,7 @@ body {
   margin-top: 0;
   text-align: center;
   background: -webkit-linear-gradient(30deg, red, yellow);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 input {
@@ -163,6 +163,6 @@ label:hover {
   font-size: 1rem;
   font-weight: 600;
   background: -webkit-linear-gradient(green, white);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
