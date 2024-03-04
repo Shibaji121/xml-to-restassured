@@ -18,11 +18,11 @@ body {
   padding: 10px;
   overflow-x: auto;
   line-height: 1.5;
-  width: fit-content;
   margin: auto;
 }
 .output-plate > span {
   white-space: pre !important;
+  font-family: "Söhne Mono", Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
 }
 .dot-pulse {
   position: relative;
@@ -152,7 +152,6 @@ label:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 6rem;
   align-items: center;
   border: 1px dotted;
   border-radius: 15px;
