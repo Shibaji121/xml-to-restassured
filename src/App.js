@@ -35,6 +35,7 @@ function App() {
     setClicked(true);
     setContent(additionalContent);
     console.log("chat completion");
+
     const openai = new OpenAI({
       apiKey: process.env.REACT_APP_API_KEY,
       dangerouslyAllowBrowser: true,
@@ -56,37 +57,28 @@ function App() {
     });
     const responseData = completion.choices[0]?.message?.content;
     setResponse(responseData);
-    // const hasCodeBlock = responseData.includes("```");
-    // if (hasCodeBlock) {
-    //   const codeContent = responseData.replace(
-    //     /```([\s\S]+?)```/g,
-    //     "<code>$1</code>"
-    //   );
-    //   console.log(codeContent);
-    //   setResponse(codeContent);
-    // }
-    console.log(completion);
   };
 
   return (
     <div className="App">
-      <h1>XML To Rest Assured</h1>
-      <div>
+      <h1>XML TO REST ASSURED CONVERTER</h1>
+      <label>
+        <span>Click To Upload any XML File</span>
         <input type="file" onChange={(e) => handleFileChange(e)} />
-      </div>
+      </label>
       {file && (
-        <div>
+        <div className="file-details">
           <p>File Name: {file.name}</p>
           <p>File Type: {file.type}</p>
           <p>File Size: {file.size}</p>
           <p>Last Modified: {file.lastModifiedDate.toDateString()}</p>
         </div>
       )}
-      <button onClick={chatCompletion}>
-        Upload File to get Rest Assured code
+      <button className="submit-btn" onClick={chatCompletion}>
+        Submit File to Generate Rest Assured code
       </button>
       {!response && clicked && (
-        <h2 style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+        <h2 className="loader">
           Generating Code <DotPlus />
         </h2>
       )}
